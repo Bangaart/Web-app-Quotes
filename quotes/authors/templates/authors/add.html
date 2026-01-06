@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="{% url 'authors:add' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.full_name.label_tag }}</td>
+                <td>{{ form.full_name }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.born_date.label_tag }}</td>
+                <td>{{ form.born_date }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.born_location.label_tag }}</td>
+                <td>{{ form.born_location }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.description.label_tag }}</td>
+                <td>{{ form.description }}</td>
+            </tr>
+            {{ form.errors}}
+        </table>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</div>
+{% endblock %}
