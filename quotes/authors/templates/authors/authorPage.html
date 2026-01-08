@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="authors-details" style="align: center;">
+    <h3 class="author-title">{{ author.full_name}}</h3>
+    <p>
+        <strong>Born:</strong><span>{{ author.born_date }}</span>
+        <span>{{ author.born_location }}</span>
+    </p>
+    <p>
+        <strong>Description:</strong>
+    </p>
+    <div class="author-description">
+        {{author.description}}
+    </div>
+
+</div>
+{% endblock %}
+

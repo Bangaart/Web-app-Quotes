@@ -8,7 +8,7 @@ class Author(models.Model):
     full_name = models.CharField(max_length=100)
     born_date = models.DateTimeField()
     born_location = models.CharField(max_length=100)
-    description = models.TextField(max_length=300)
+    description = models.TextField(max_length=500)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):

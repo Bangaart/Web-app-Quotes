@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %} {% load tags_extras %}
+
+{% block content %}
+
+
+{% for quote in quote_list %}
+<div style="border: 1px solid black; padding: 10px; margin: 20px; border-radius: 5px; border-width: 3px;">
+    <p><i>"{{ quote.quote}}"</i></p>
+    <p>by {{ quote.author }} (<a href="{% url 'authors:authorPage' quote.author.id %}">about</a>)</p>
+    <p>Tags: {{ quote.tags|load_tags }}</p>
+</div>
+{% endfor %}
+{% endblock %}
