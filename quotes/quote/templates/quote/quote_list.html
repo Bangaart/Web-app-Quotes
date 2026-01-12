@@ -3,7 +3,7 @@
 {% block content %}
 
 
-{% for quote in quote_list %}
+{% for quote in page_obj %}
 
 <div style="border: 1px solid black; padding: 10px; margin: 20px; border-radius: 5px; border-width: 3px;">
     <p><i>"{{ quote.quote}}"</i></p>
@@ -18,5 +18,15 @@
         <li>{{ tag.name }}</li>
     </ul>
     {% endfor %}
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" role="button">&larr; Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" role="button">Next &rarr; </a>
+        {% endif %}
+    </span>
 </div>
 {% endblock %}

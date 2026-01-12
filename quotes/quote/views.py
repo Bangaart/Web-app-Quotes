@@ -29,7 +29,6 @@ class QuoteListView(generic.ListView):
     paginate_by = 10
     model = Quote
     template_name = 'quote/quote_list.html'
-    context_object_name = 'quote_list'
 
     def get_queryset(self):
         return Quote.objects.all()
