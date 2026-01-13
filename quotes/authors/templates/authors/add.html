@@ -9,23 +9,26 @@
             <tr>
                 <td>{{ form.full_name.label_tag }}</td>
                 <td>{{ form.full_name }}</td>
+                <td>{{ form.errors.full_name }}</td>
             </tr>
             <tr>
                 <td>{{ form.born_date.label_tag }}</td>
                 <td>{{ form.born_date }}</td>
+                <td>{{ form.errors.born_date }}</td>
             </tr>
             <tr>
                 <td>{{ form.born_location.label_tag }}</td>
                 <td>{{ form.born_location }}</td>
+                <td>{{ form.errors.born_location }}</td>
             </tr>
             <tr>
                 <td>{{ form.description.label_tag }}</td>
                 <td>{{ form.description }}</td>
+                <td>{{ form.errors.description }}</td>
             </tr>
-            {{ form.errors}}
         </table>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'authors:add' %}" class="btn btn-secondary">Clean Data</a>
     </form>
 </div>
 {% endblock %}

@@ -5,3 +5,67 @@
 .alert-success {
     color: green;
 }
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background: blue;
+    color: white;
+}
+
+.btn-secondary {
+    background: #ccc;
+    color: black;
+}
+
+.tags-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tag-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    border-radius: 16px;
+    cursor: pointer;
+    user-select: none;
+    background: #f5f5f5;
+    font-size: 14px;
+}
+
+
+.tag-item input[type="checkbox"] {
+    display: none;
+}
+
+
+.tag-item input[type="checkbox"]:checked + span {
+    color: white;
+}
+
+.tag-item:has(input[type="checkbox"]:checked) {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+}
+.step-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

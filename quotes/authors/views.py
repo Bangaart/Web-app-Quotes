@@ -13,6 +13,7 @@ from .models import Author
 def add(request):
     if request.method == 'POST':
         form = AddAuthorForm(request.POST)
+        form.as_ul()
         if form.is_valid():
             author = form.save(commit=False)
             author.user = request.user
@@ -32,7 +33,7 @@ class AuthorsListView(generic.ListView):
     def get_queryset(self):
         return Author.objects.all()
 
- 
+
 class AuthorDetailView(generic.DetailView):
     model = Author
     template_name = 'authors/authorPage.html'

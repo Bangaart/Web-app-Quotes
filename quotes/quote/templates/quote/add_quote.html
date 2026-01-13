@@ -10,18 +10,29 @@
             <tr>
                 <td>{{ form.quote.label_tag }}</td>
                 <td>{{ form.quote }}</td>
+                <td>{{ form.errors.quote }}</td>
             </tr>
             <tr>
                 <td>{{ form.tags.label_tag }}</td>
-                <td>{{ form.tags }}</td>
+                <td>
+                    <div class="tags-box">
+                        {% for checkbox in form.tags %}
+                        <label class="tag-item">
+                            {{ checkbox.tag }}
+                            <span>{{ checkbox.choice_label }}</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>{{ form.author.label_tag }}</td>
                 <td>{{ form.author }}</td>
+                <td>{{ form.errors.author }}</td>
             </tr>
         </table>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'quote:add_quote' %}" class="btn btn-secondary">Clean Data</a>
     </form>
 </div>
 {% endblock %}
