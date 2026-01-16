@@ -99,6 +99,9 @@ def get_scraping_data():
 def fill_database(request):
     with transaction.atomic():
         quotes_dict = get_scraping_data()
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser(
+                username='admin', email='', password='admin')
         user = User.objects.get(id=1)
         for key, value in quotes_dict.items():
             born_date = datetime.strptime(value['author']['born_date'], "%B %d, %Y")
