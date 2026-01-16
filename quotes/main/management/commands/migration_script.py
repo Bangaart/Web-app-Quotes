@@ -5,8 +5,7 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from authors.models import Author
-from main.management import connect  # noqa
-from main.management.models_mongo import Authors, Quotes
+from main.management.commands._models_mongo import Authors, Quotes
 from quote.models import Tag, Quote
 
 
@@ -16,7 +15,13 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         with transaction.atomic():
-            user = User.objects.get(id=1)
+            self.stdout.write(self.style.SUCCESS("Start migration from MongoDB to PostgreSQL..."))
+
+            if not User.objects.filter(username="admin").exists():
+                User.objects.create_superuser(
+                    "admin", "", "admin"
+                )
+                user = User.objects.get(pk=1)
             authors_map = {}
             for item in Authors.objects:
                 born_date = datetime.strptime(item.born_date, "%B %d, %Y")
@@ -43,3 +48,5 @@ class Command(BaseCommand):
                         name=tag,
                         user=user)
                     quote.tags.add(tags)
+
+            self.stdout.write(self.style.SUCCESS("Database successfully migrated"))

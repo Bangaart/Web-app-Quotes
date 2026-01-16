@@ -11,6 +11,7 @@
     <p>Tags: {{ quote.tags|load_tags }}</p>
 </div>
 {% endfor %}
+{% if top_tags %}
 <div>
     <h1>Top Ten Tags </h1>
     {% for tag in top_tags %}
@@ -19,6 +20,7 @@
     </ul>
     {% endfor %}
 </div>
+{% endif %}
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}

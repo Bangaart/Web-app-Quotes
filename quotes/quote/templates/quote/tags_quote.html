@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p><b>Searching for tag: </b>{{tag|tag_name_capitalize}}</p>
+<p><b>Searching for tag: </b>{{tag|capfirst}}</p>
 {% for quote in quote_list %}
 
 <div style="border: 1px solid black; padding: 10px; margin: 20px; border-radius: 5px; border-width: 3px;">

@@ -12,8 +12,3 @@ def load_tags(value):
         url = reverse('quote:tags_quotes', args=(item.id,))
         links.append(f'<a href="{url}" style="border-radius: 5px;">{item.name}</a>')
     return mark_safe(', '.join(links))
-
-
-@register.filter('tag_name_capitalize')
-def capitalize_tag_name(value):
-    return str(value).capitalize()
