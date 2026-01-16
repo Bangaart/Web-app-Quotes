@@ -5,8 +5,9 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from authors.models import Author
-from main.management.commands._models_mongo import Authors, Quotes
 from quote.models import Tag, Quote
+from ._connect import *  # noqa
+from ._models_mongo import Authors, Quotes
 
 
 class Command(BaseCommand):
@@ -21,7 +22,7 @@ class Command(BaseCommand):
                 User.objects.create_superuser(
                     "admin", "", "admin"
                 )
-                user = User.objects.get(pk=1)
+            user = User.objects.get(pk=1)
             authors_map = {}
             for item in Authors.objects:
                 born_date = datetime.strptime(item.born_date, "%B %d, %Y")

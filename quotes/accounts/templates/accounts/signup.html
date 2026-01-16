@@ -26,9 +26,7 @@
         </label>
         <span>{{ form.errors.password2 }}</span>
     </div>
-    <div class="grid">
-        <button type="submit">Submit</button>
-        <button type="reset" class="secondary">Reset</button>
-    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'quote:add_quote' %}" class="btn btn-secondary">Clean Data</a>
 </form>
 {% endblock %}

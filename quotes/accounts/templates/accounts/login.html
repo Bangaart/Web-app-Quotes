@@ -28,8 +28,8 @@
         </tr>
     </table>
 
-    <input type="submit" value="Login"/>
-    <input type="reset" value="Reset" class="secondary"/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'quote:add_quote' %}" class="btn btn-secondary">Clean Data</a>
     <input type="hidden" name="next" value="{{ next }}">
 </form>
 

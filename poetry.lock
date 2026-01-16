@@ -274,37 +274,6 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-name = "django-appconf"
-version = "1.2.0"
-description = "A helper class for handling configuration defaults of packaged apps gracefully."
-optional = false
-python-versions = ">=3.9"
-groups = ["main"]
-files = [
-    {file = "django_appconf-1.2.0-py3-none-any.whl", hash = "sha256:b81bce5ef0ceb9d84df48dfb623a32235d941c78cc5e45dbb6947f154ea277f4"},
-    {file = "django_appconf-1.2.0.tar.gz", hash = "sha256:15a88d60dd942d6059f467412fe4581db632ef03018a3c183fb415d6fc9e5cec"},
-]
-
-[package.dependencies]
-django = "*"
-
-[[package]]
-name = "django-select2"
-version = "8.4.8"
-description = "This is a Django_ integration of Select2_."
-optional = false
-python-versions = ">=3.10"
-groups = ["main"]
-files = [
-    {file = "django_select2-8.4.8-py3-none-any.whl", hash = "sha256:a2ce6a4c556dd2d4d57eb3753618d6f31f8d3910e9d9fa1b686d9340f50b14eb"},
-    {file = "django_select2-8.4.8.tar.gz", hash = "sha256:592e52effff2b5850cb7c98b265715b6704fb784699c4aedddfdd8ae1ffa1e81"},
-]
-
-[package.dependencies]
-django = ">=4.2"
-django-appconf = ">=0.6.0"
-
-[[package]]
 name = "dnspython"
 version = "2.8.0"
 description = "DNS toolkit"
@@ -999,4 +968,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "04a10de2146f9858f05b7d9ade334226c1207b7e4db46c4165b0e9df6751e986"
+content-hash = "2aeb5c81df000b594107bb3951b886e691f03d432d67d0a93930752725c0bff2"
