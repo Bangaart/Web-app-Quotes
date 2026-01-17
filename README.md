@@ -42,7 +42,7 @@ or
 via docker UX you can open EXEC tub inside quotes_web container and run
 
   ```
-  python manage.py migration_script. 
+  python manage.py migration_script 
   ```
 
 This script
